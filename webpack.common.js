@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const BG_IMAGES_DIRNAME = 'bgimages';
-const basename = process.env.ASSET_PATH || '/';
+const basename = process.env.ASSET_PATH || '/tmp-prototype-demo/';
 module.exports = (env) => {
   return {
     module: {
@@ -90,7 +90,7 @@ module.exports = (env) => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: ASSET_PATH,
+      publicPath: basename,
     },
     plugins: [
       new HtmlWebpackPlugin({
