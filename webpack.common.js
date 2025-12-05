@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const BG_IMAGES_DIRNAME = 'bgimages';
-const ASSET_PATH = process.env.ASSET_PATH || '/tmp-prototype-demo/';
+const basename = process.env.ASSET_PATH || '/';
 module.exports = (env) => {
   return {
     module: {
